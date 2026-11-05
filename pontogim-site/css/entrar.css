@@ -1,0 +1,183 @@
+/* ==========================================================
+   Ponto GIM | estilos só da página de login
+   (usa as variáveis e botões do style.css)
+   ========================================================== */
+
+.entrar {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+}
+
+/* ---------- Lado da marca ---------- */
+.entrar-marca {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background:
+    radial-gradient(48rem 30rem at 15% 105%, rgba(255, 138, 31, .22), transparent 60%),
+    radial-gradient(48rem 30rem at 90% -10%, rgba(123, 63, 242, .45), transparent 60%),
+    var(--ink);
+}
+.entrar-texto h1 {
+  font: 400 clamp(2.8rem, 6vw, 5rem)/1 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: .005em;
+  max-width: 12ch;
+}
+.entrar-texto p:not(.slogan) {
+  margin-top: 1.2rem;
+  max-width: 40ch;
+  font-size: 1.15rem;
+  color: rgba(243, 239, 250, .82);
+}
+
+/* ---------- Lado do formulário ---------- */
+.entrar-painel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  background: var(--paper);
+  color: var(--ink);
+}
+.entrar-card {
+  width: min(100%, 26rem);
+  padding: clamp(1.4rem, 4vw, 2rem);
+  border: 1px solid rgba(18, 13, 31, .1);
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 20px 50px rgba(18, 13, 31, .08);
+}
+
+/* ---------- Abas ---------- */
+.abas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid rgba(18, 13, 31, .12);
+}
+.aba {
+  padding: .75rem 0;
+  margin-bottom: -2px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: rgba(18, 13, 31, .6);
+  font: 800 1rem var(--font-body);
+  cursor: pointer;
+}
+.aba[aria-selected="true"] {
+  color: var(--ink);
+  border-image: var(--grad) 1;
+}
+
+/* ---------- Botão do Google ---------- */
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  width: 100%;
+  padding: .85rem 1rem;
+  border: 2px solid rgba(18, 13, 31, .18);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: 800 1rem var(--font-body);
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.btn-google:hover:not(:disabled) { border-color: var(--ink); background: #faf8fd; }
+
+.ou {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin: 1.2rem 0;
+  font-size: .92rem;
+  color: rgba(18, 13, 31, .6);
+}
+.ou::before, .ou::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(18, 13, 31, .15);
+}
+
+/* ---------- Campos (o style.css só cobre texto e número) ---------- */
+.entrar-card .field label { color: var(--ink); }
+.entrar-card input[type="text"],
+.entrar-card input[type="email"],
+.entrar-card input[type="password"] {
+  width: 100%;
+  padding: .8rem 1rem;
+  border: 2px solid rgba(18, 13, 31, .18);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  font: 600 1rem var(--font-body);
+}
+.entrar-card input:focus-visible { outline-offset: 1px; border-color: transparent; }
+
+button:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+
+.esqueci { margin-top: 1rem; text-align: center; }
+.link-botao {
+  border: 0;
+  background: none;
+  padding: .2rem;
+  color: var(--ink);
+  font: 600 .95rem var(--font-body);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+/* ---------- Mensagens e avisos ---------- */
+.mensagem {
+  margin-top: 1.1rem;
+  padding: .8rem 1rem;
+  border-radius: 14px;
+  font-size: .98rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.mensagem--erro { background: #fde8ec; color: #8a1230; }
+.mensagem--ok { background: #e3f6ea; color: #14532d; }
+
+.aviso {
+  margin-bottom: 1.1rem;
+  padding: .8rem 1rem;
+  border-radius: 14px;
+  font-size: .95rem;
+  line-height: 1.45;
+}
+.aviso--config { background: #fff4d6; color: #5c3d00; }
+.aviso--instagram { background: #e8efff; color: #12306e; }
+.aviso code { font-size: .9em; }
+
+.entrar-voltar { font-size: .95rem; }
+.entrar-voltar a { color: var(--ink); text-underline-offset: 4px; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 860px) {
+  .entrar { grid-template-columns: 1fr; }
+  .entrar-marca { gap: 1.6rem; padding-bottom: 2rem; }
+  .entrar-texto h1 { font-size: clamp(2.4rem, 11vw, 3.4rem); }
+  .entrar-texto p:not(.slogan) { font-size: 1.05rem; }
+  .entrar-painel { justify-content: flex-start; }
+}
+
+.entrar-lgpd {
+  margin-top: 1.1rem;
+  font-size: .88rem;
+  line-height: 1.45;
+  text-align: center;
+  color: rgba(18, 13, 31, .65);
+}
+.entrar-lgpd a { color: var(--ink); text-underline-offset: 3px; }

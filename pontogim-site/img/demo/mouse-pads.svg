@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a1f"/><stop offset=".5" stop-color="#ff3d8b"/><stop offset="1" stop-color="#2e6bff"/></linearGradient>
+<linearGradient id="g2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2e6bff"/><stop offset=".55" stop-color="#7b3ff2"/><stop offset="1" stop-color="#ff3d8b"/></linearGradient>
+<radialGradient id="luz" cx=".3" cy=".2" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="sombra" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#120d1f" flood-opacity=".35"/></filter>
+</defs>
+<rect width="800" height="600" fill="#d1349a"/>
+<circle cx="130" cy="110" r="190" fill="#fff" opacity=".07"/><circle cx="700" cy="520" r="230" fill="#000" opacity=".08"/>
+<rect width="800" height="600" fill="url(#luz)"/>
+<g transform="rotate(-8 400 300)" filter="url(#sombra)">
+<rect x="170" y="170" width="460" height="270" rx="30" fill="#120d1f"/>
+<rect x="182" y="182" width="436" height="246" rx="22" fill="url(#g2)"/><rect x="182" y="182" width="436" height="246" rx="22" fill="url(#luz)"/>
+<g transform="translate(400 305) scale(4.4)"><path d="M0,-26 L7,-9 L26,-8 L11,4 L16,23 L0,12 L-16,23 L-11,4 L-26,-8 L-7,-9 Z" fill="#fff"/></g>
+</g>
+<g transform="translate(520 380) rotate(-18)" filter="url(#sombra)"><rect x="-26" y="-42" width="52" height="84" rx="26" fill="#f7f4fc"/><path d="M-26,-4 L26,-4" stroke="#bdb4d4" stroke-width="3"/><path d="M0,-42 L0,-4" stroke="#bdb4d4" stroke-width="3"/></g>
+</svg>

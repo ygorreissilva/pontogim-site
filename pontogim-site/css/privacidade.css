@@ -1,0 +1,44 @@
+/* ==========================================================
+   Ponto GIM | estilos só da página de Política de Privacidade
+   (usa as variáveis e botões do style.css)
+   ========================================================== */
+
+.doc-head {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2.2rem, 5vw, 3.5rem);
+  background:
+    radial-gradient(50rem 24rem at 90% -20%, rgba(123, 63, 242, .35), transparent 60%),
+    var(--ink);
+}
+.doc-head h1 {
+  font: 400 clamp(2.4rem, 6vw, 4.2rem)/1.02 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: .005em;
+}
+.doc-head p {
+  margin-top: 1rem;
+  max-width: 52ch;
+  font-size: 1.15rem;
+  color: rgba(243, 239, 250, .82);
+}
+.doc-head .doc-data {
+  font-size: .95rem;
+  color: rgba(243, 239, 250, .6);
+}
+
+.documento { padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(3.5rem, 8vw, 6rem); }
+
+/* Texto corrido: linhas curtas para ler com conforto */
+.doc-corpo { max-width: 46rem; }
+.doc-corpo h2 {
+  margin: 2.4rem 0 .7rem;
+  font: 800 1.4rem/1.25 var(--font-body);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.doc-corpo h2:first-child { margin-top: 0; }
+.doc-corpo h3 { margin: 1.4rem 0 .4rem; font-size: 1.1rem; font-weight: 800; }
+.doc-corpo p { margin-top: .7rem; line-height: 1.65; }
+.doc-corpo ul { margin: .7rem 0 0; padding-left: 1.3rem; list-style: disc; display: grid; gap: .45rem; }
+.doc-corpo li { line-height: 1.55; padding-left: .2rem; }
+.doc-corpo li::marker { color: var(--pink); }
+.doc-corpo a { color: var(--ink); text-underline-offset: 3px; }

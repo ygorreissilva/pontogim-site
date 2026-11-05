@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a1f"/><stop offset=".5" stop-color="#ff3d8b"/><stop offset="1" stop-color="#2e6bff"/></linearGradient>
+<linearGradient id="g2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2e6bff"/><stop offset=".55" stop-color="#7b3ff2"/><stop offset="1" stop-color="#ff3d8b"/></linearGradient>
+<radialGradient id="luz" cx=".3" cy=".2" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="sombra" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#120d1f" flood-opacity=".35"/></filter>
+</defs>
+<rect width="800" height="600" fill="#7b3ff2"/>
+<circle cx="130" cy="110" r="190" fill="#fff" opacity=".07"/><circle cx="700" cy="520" r="230" fill="#000" opacity=".08"/>
+<rect width="800" height="600" fill="url(#luz)"/>
+<ellipse cx="400" cy="450" rx="120" ry="16" fill="#120d1f" opacity=".25"/>
+<g filter="url(#sombra)">
+<path d="M320,150 L480,150 L458,430 Q456,448 438,448 L362,448 Q344,448 342,430 Z" fill="#f4f1fb" opacity=".96"/>
+<path d="M320,150 L480,150 L478,175 L322,175 Z" fill="#e0d9f0"/>
+</g>
+<path d="M327,250 L473,250 L466,360 L334,360 Z" fill="url(#g2)"/>
+<path d="M327,250 L473,250 L466,360 L334,360 Z" fill="url(#luz)"/>
+<g transform="translate(400 305) scale(1.8)"><path d="M0,-26 L7,-9 L26,-8 L11,4 L16,23 L0,12 L-16,23 L-11,4 L-26,-8 L-7,-9 Z" fill="#fff"/></g>
+<rect x="334" y="170" width="16" height="262" rx="8" fill="#fff" opacity=".5"/>
+</svg>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ponto GIM | Gráfica e personalizados</title>
+  <meta name="description" content="Canecas, copos, camisetas, adesivos, banners e brindes personalizados. Alameda Peru, 135, São Gonçalo/RJ. Peça pelo WhatsApp.">
+  <meta name="theme-color" content="#120d1f">
+  <meta property="og:title" content="Ponto GIM | Gráfica e personalizados">
+  <meta property="og:description" content="Sua ideia, nossa arte, sua personalidade! Peça pelo WhatsApp.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a1f'/%3E%3Cstop offset='.5' stop-color='%23ff3d8b'/%3E%3Cstop offset='1' stop-color='%232e6bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='url(%23g)'/%3E%3Ccircle cx='32' cy='32' r='22' fill='%23120d1f'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;600;800&family=Playfair+Display:ital,wght@1,700&family=Yellowtail&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Faixa de campanha: troque o texto a cada data comemorativa -->
+  <div class="campaign">
+    <p>Natal chegando: encomende cedo e garanta o seu prazo.
+      <a href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site e quero encomendar presentes de Natal.">Falar no WhatsApp</a>
+    </p>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="#inicio" aria-label="Ponto GIM, ir para o início">
+        <!-- Para usar o logo oficial: troque este span por <img src="img/logo.png" alt="Ponto GIM" height="44"> -->
+        <span class="logo-mark"><span class="logo-text">.gim</span></span>
+        <span class="logo-name">Ponto GIM</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+
+      <nav id="menu" class="nav" aria-label="Principal">
+        <a href="#produtos">Produtos</a>
+        <a href="paginas/catalogo.html">Catálogo</a>
+        <a href="#como-pedir">Como pedir</a>
+        <a href="#prazos">Prazos</a>
+        <a href="#sobre">Quem somos</a>
+        <a href="#contato">Contato</a>
+        <a href="paginas/entrar.html" data-auth-link hidden>Entrar</a>
+        <a class="btn btn--primary btn--small" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site da Ponto GIM e queria fazer um pedido.">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>Caneca, camisa e presente com a sua cara.</h1>
+          <p class="hero-lead">Sua ideia, nossa arte, sua personalidade! Escreva ao lado o que você quer na caneca, escolha a cor e veja como fica antes de pedir.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site da Ponto GIM e queria fazer um pedido.">Pedir pelo WhatsApp</a>
+            <a class="btn btn--ghost" href="#produtos">Ver produtos</a>
+          </div>
+          <p class="hero-address">Alameda Peru, 135, São Gonçalo/RJ &middot; WhatsApp <a href="tel:+5521997437808">(21) 99743-7808</a></p>
+        </div>
+
+        <form class="builder" id="builder" aria-labelledby="builder-title">
+          <h2 id="builder-title">Monte sua caneca</h2>
+
+          <div class="stage">
+            <svg id="mug" viewBox="0 0 400 340" role="img" aria-label="Pré-visualização da caneca personalizada">
+              <defs>
+                <linearGradient id="shade" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0" stop-color="#000" stop-opacity=".30"/>
+                  <stop offset=".24" stop-color="#fff" stop-opacity=".24"/>
+                  <stop offset=".6" stop-color="#000" stop-opacity="0"/>
+                  <stop offset="1" stop-color="#000" stop-opacity=".34"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="170" cy="310" rx="125" ry="13" fill="#000" opacity=".4"/>
+              <path id="mug-handle" d="M276 106 C356 100 356 240 276 238" fill="none" stroke-width="30" stroke-linecap="round"/>
+              <path id="mug-body" d="M60 58 H280 V270 Q280 300 250 300 H90 Q60 300 60 270 Z"/>
+              <path d="M60 58 H280 V270 Q280 300 250 300 H90 Q60 300 60 270 Z" fill="url(#shade)"/>
+              <ellipse id="mug-rim" cx="170" cy="58" rx="110" ry="15"/>
+              <ellipse cx="170" cy="60" rx="100" ry="10" fill="#000" opacity=".38"/>
+              <text id="mug-label" x="170" y="180" text-anchor="middle"></text>
+            </svg>
+          </div>
+
+          <div class="field">
+            <label for="mug-text">Texto da caneca</label>
+            <input id="mug-text" name="texto" type="text" maxlength="36" value="Seu nome aqui" autocomplete="off">
+          </div>
+
+          <fieldset class="field">
+            <legend>Cor da caneca</legend>
+            <div class="swatches">
+              <label class="swatch"><input type="radio" name="cor" value="#f4f1f8" data-nome="Branca" checked><span style="--c:#f4f1f8"></span><em class="sr-only">Branca</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#1b1625" data-nome="Preta"><span style="--c:#1b1625"></span><em class="sr-only">Preta</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#ffc23d" data-nome="Amarela"><span style="--c:#ffc23d"></span><em class="sr-only">Amarela</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#ff6fa8" data-nome="Rosa"><span style="--c:#ff6fa8"></span><em class="sr-only">Rosa</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#2e6bff" data-nome="Azul"><span style="--c:#2e6bff"></span><em class="sr-only">Azul</em></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Estilo da letra</legend>
+            <div class="pills">
+              <label class="pill pill--forte"><input type="radio" name="fonte" value="forte" data-nome="Forte" checked><span>Forte</span></label>
+              <label class="pill pill--manuscrita"><input type="radio" name="fonte" value="manuscrita" data-nome="Manuscrita"><span>Manuscrita</span></label>
+              <label class="pill pill--classica"><input type="radio" name="fonte" value="classica" data-nome="Clássica"><span>Clássica</span></label>
+            </div>
+          </fieldset>
+
+          <button class="btn btn--primary btn--full" type="submit">Pedir esta caneca no WhatsApp</button>
+          <p class="builder-note">Prévia ilustrativa. A arte final você aprova antes da produção.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="section section--light">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>O que a gente personaliza</h2>
+          <p>Escolha uma categoria e chame no WhatsApp. A mensagem já vai pronta, é só enviar a ideia.</p>
+        </div>
+
+        <!-- Para colocar fotos reais: salve em /img com os nomes abaixo (caneca.jpg, vestuario.jpg...). Se o arquivo não existir, o cartão usa só a cor. -->
+        <div class="tiles">
+          <article class="tile tile--big" style="--bg:#7b3ff2;--fg:#fff">
+            <img src="img/caneca.jpg" alt="" loading="lazy" data-opcional data-demo="img/demo/tile-caneca.svg">
+            <div class="tile-body">
+              <h3>Canecas e copos</h3>
+              <p>Com foto, frase, nome ou logo. Para presentear, para vender, para o dia a dia.</p>
+              <a class="btn btn--light" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site e quero fazer canecas ou copos personalizados.">Pedir canecas e copos</a>
+            </div>
+          </article>
+
+          <article class="tile" style="--bg:#ff8a1f;--fg:#120d1f">
+            <img src="img/vestuario.jpg" alt="" loading="lazy" data-opcional data-demo="img/demo/tile-vestuario.svg">
+            <div class="tile-body">
+              <h3>Vestuário</h3>
+              <p>Camisetas, baby looks, regatas e peças infantis, com estampa por sublimação ou DTF.</p>
+              <a class="btn btn--dark" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site e quero fazer peças de vestuário personalizadas.">Pedir vestuário</a>
+            </div>
+          </article>
+
+          <article class="tile" style="--bg:#ff3d8b;--fg:#120d1f">
+            <img src="img/adesivos.jpg" alt="" loading="lazy" data-opcional data-demo="img/demo/tile-adesivos.svg">
+            <div class="tile-body">
+              <h3>Adesivos e etiquetas</h3>
+              <p>Com a sua arte ou com uma criada por nós, sem custo.</p>
+              <a class="btn btn--dark" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site e quero adesivos ou etiquetas personalizados.">Pedir adesivos</a>
+            </div>
+          </article>
+
+          <article class="tile" style="--bg:#2e6bff;--fg:#fff">
+            <img src="img/festas.jpg" alt="" loading="lazy" data-opcional data-demo="img/demo/tile-festas.svg">
+            <div class="tile-body">
+              <h3>Convites e topos de bolo</h3>
+              <p>Convites digitais e interativos e topos de bolo para a sua festa.</p>
+              <a class="btn btn--light" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site e quero convite digital ou topo de bolo personalizado.">Pedir agora</a>
+            </div>
+          </article>
+
+          <article class="tile" style="--bg:#ffc23d;--fg:#120d1f">
+            <img src="img/banners.jpg" alt="" loading="lazy" data-opcional data-demo="img/demo/tile-banners.svg">
+            <div class="tile-body">
+              <h3>Banners</h3>
+              <p>Para festas, eventos e lojas.</p>
+              <a class="btn btn--dark" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site e quero um banner personalizado.">Pedir banner</a>
+            </div>
+          </article>
+
+          <article class="tile tile--half" style="--bg:#1b1430;--fg:#fff">
+            <img src="img/outros.jpg" alt="" loading="lazy" data-opcional data-demo="img/demo/tile-outros.svg">
+            <div class="tile-body">
+              <h3>Relógios, azulejos, mouse pads e capas de celular</h3>
+              <p>Presentes e itens do dia a dia com a sua foto ou arte.</p>
+              <a class="btn btn--light" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site e quero relógio, azulejo, mouse pad ou capa de celular personalizados.">Pedir agora</a>
+            </div>
+          </article>
+
+          <article class="tile tile--half" style="--bg:#2a2045;--fg:#fff">
+            <img src="img/empresas.jpg" alt="" loading="lazy" data-opcional data-demo="img/demo/tile-empresas.svg">
+            <div class="tile-body">
+              <h3>Para empresas</h3>
+              <p>Brindes corporativos e personalizados com a sua marca, com orçamento sob medida.</p>
+              <a class="btn btn--dark" href="#orcamento">Pedir orçamento</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="ver-catalogo">
+          <a class="btn btn--dark" href="paginas/catalogo.html">Ver catálogo completo</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- COMO PEDIR -->
+    <section id="como-pedir" class="section">
+      <div class="wrap wrap--mascote">
+        <!-- Mascote: salve o arquivo em img/mascote.png (PNG com fundo transparente). Se não existir, some sozinho. -->
+        <img class="mascote" src="img/mascote.png" alt="" loading="lazy" data-opcional>
+        <div class="section-head">
+          <h2>Como pedir</h2>
+          <p>Sem cadastro e sem complicação. Tudo se resolve pelo WhatsApp.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-n">1</span>
+            <h3>Conta a ideia</h3>
+            <p>Mande a sua arte ou peça para a gente criar. A criação da arte é gratuita.</p>
+          </li>
+          <li>
+            <span class="step-n">2</span>
+            <h3>Aprova a arte</h3>
+            <p>Toda arte é enviada para a sua aprovação antes de ir para a produção.</p>
+          </li>
+          <li>
+            <span class="step-n">3</span>
+            <h3>Confirma o pagamento</h3>
+            <p>A produção começa depois da confirmação do pagamento ou do sinal combinado.</p>
+          </li>
+          <li>
+            <span class="step-n">4</span>
+            <h3>Retira ou recebe</h3>
+            <p>Retire na loja, receba por motoboy ou peça o envio para outras cidades.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PRAZOS, PAGAMENTO E ENTREGA -->
+    <section id="prazos" class="section section--light">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Prazos, pagamento e entrega</h2>
+          <p>Para você saber o que esperar antes de pedir.</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Prazo de produção</h3>
+            <table class="prazos">
+              <caption class="sr-only">Prazo de produção por produto, em dias úteis</caption>
+              <thead>
+                <tr><th scope="col">Produto</th><th scope="col">Prazo</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Canecas</th><td>2 dias úteis</td></tr>
+                <tr><th scope="row">Copos</th><td>3 dias úteis</td></tr>
+                <tr><th scope="row">Camisas e produtos em DTF</th><td>3 dias úteis</td></tr>
+                <tr><th scope="row">Adesivos e etiquetas</th><td>4 dias úteis</td></tr>
+                <tr><th scope="row">Banners e demais personalizados</th><td>5 dias úteis</td></tr>
+              </tbody>
+            </table>
+            <p class="info-note">Precisa para antes? Pedidos urgentes são aceitos mediante consulta de disponibilidade.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Pagamento</h3>
+            <ul class="info-list">
+              <li>Pix, dinheiro, cartão de débito e cartão de crédito.</li>
+              <li>Parcelamento no crédito com o acréscimo das taxas da máquina, informado antes de você confirmar.</li>
+              <li>Os preços variam conforme modelo, tamanho, quantidade e personalização. Pedidos especiais e corporativos têm orçamento personalizado.</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Entrega</h3>
+            <ul class="info-list">
+              <li>Retirada na loja.</li>
+              <li>Entrega por motoboy.</li>
+              <li>Envio para outras cidades pelos Correios ou por transportadora.</li>
+              <li>O frete é calculado conforme o endereço, a modalidade e o destino.</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Troca e correção</h3>
+            <ul class="info-list">
+              <li>Se o erro de produção foi nosso, corrigimos ou substituímos sem custo.</li>
+              <li>Alterações pedidas depois da aprovação da arte podem ter custo adicional.</li>
+              <li>Produto feito corretamente conforme a arte aprovada não é trocado por preferência pessoal, respeitados os direitos do consumidor.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section id="sobre" class="section">
+      <div class="wrap sobre-grid">
+        <div class="sobre-texto">
+          <h2>Nossa história</h2>
+          <p>A Ponto GIM Gráfica e Personalizados nasceu em 2024, a partir de uma nova fase profissional, de um sonho de independência e de uma paixão que foi crescendo ao longo dos anos.</p>
+          <p>Depois de trabalhar por muitos anos em grandes empresas, especialmente na área de Recursos Humanos, a fundadora começou a desenvolver trabalhos gráficos manualmente. Essa experiência despertou um interesse cada vez maior pelo universo da personalização e revelou a oportunidade de transformar uma habilidade em um novo caminho profissional. O que começou como uma atividade complementar tornou-se uma paixão e a motivação para construir o próprio negócio.</p>
+          <p>Hoje, a Ponto GIM busca transformar ideias em produtos personalizados para presentear, celebrar momentos especiais, fortalecer marcas e eternizar lembranças.</p>
+        </div>
+
+        <div class="sobre-lado">
+          <h3>Por que escolher a Ponto GIM</h3>
+          <ul class="corp-list">
+            <li>Atendimento próximo e personalizado</li>
+            <li>Criação de artes personalizadas gratuitamente</li>
+            <li>Qualidade, criatividade e variedade de produtos</li>
+          </ul>
+          <p class="slogan">Sua ideia, nossa arte, sua personalidade!</p>
+        </div>
+      </div>
+      <!-- DEPOIMENTOS: a loja vai enviar de 3 a 5 depoimentos reais, com autorização para publicar. Quando chegarem, entram aqui, em uma seção própria. Não publicar nada inventado. -->
+    </section>
+
+    <!-- CORPORATIVO + ORÇAMENTO -->
+    <section id="orcamento" class="section section--panel">
+      <div class="wrap corp-grid">
+        <div class="corp-copy">
+          <h2>Sua marca merece presença.</h2>
+          <p>Personalizados para empresas e brindes corporativos. Não há quantidade mínima fixa: a gente avalia a viabilidade, os valores e os descontos de cada pedido.</p>
+          <ul class="corp-list">
+            <li>Brindes para clientes e equipe</li>
+            <li>Camisetas de equipe e de evento</li>
+            <li>Canecas, copos e banners com a sua marca</li>
+          </ul>
+        </div>
+
+        <form class="quote" id="quote">
+          <h3>Peça um orçamento</h3>
+          <div class="field">
+            <label for="q-nome">Seu nome</label>
+            <input id="q-nome" name="nome" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="q-empresa">Empresa (se tiver)</label>
+            <input id="q-empresa" name="empresa" type="text" autocomplete="organization">
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="q-produto">O que você precisa</label>
+              <select id="q-produto" name="produto">
+                <option>Canecas e copos</option>
+                <option>Camisetas e vestuário</option>
+                <option>Adesivos e etiquetas</option>
+                <option>Convites e topos de bolo</option>
+                <option>Banners</option>
+                <option>Relógios, azulejos, mouse pads ou capas de celular</option>
+                <option>Brindes corporativos</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="q-qtd">Quantidade</label>
+              <input id="q-qtd" name="qtd" type="number" min="1" inputmode="numeric" placeholder="Ex.: 50">
+            </div>
+          </div>
+          <div class="field">
+            <label for="q-detalhes">Detalhes</label>
+            <textarea id="q-detalhes" name="detalhes" rows="3" placeholder="Prazo, cores, se já tem a logo..."></textarea>
+          </div>
+          <button class="btn btn--primary btn--full" type="submit">Enviar pelo WhatsApp</button>
+          <p class="builder-note">Ao enviar, o WhatsApp abre com a mensagem pronta.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section section--light">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Venha conhecer a loja</h2>
+          <!-- PENDENTE: CEP, bairro e ponto de referência (a loja ainda vai confirmar) -->
+          <dl class="contact-list">
+            <div>
+              <dt>Endereço</dt>
+              <dd>Alameda Peru, 135, São Gonçalo/RJ</dd>
+            </div>
+            <div>
+              <dt>Horário</dt>
+              <dd>
+                Segunda a sábado, das 9h às 19h
+                <span class="dd-sub">Domingos e feriados: atendimento presencial e pelo WhatsApp por escala, das 10h às 13h</span>
+              </dd>
+            </div>
+            <div>
+              <dt>WhatsApp</dt>
+              <dd><a href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site da Ponto GIM.">(21) 99743-7808</a></dd>
+            </div>
+            <div>
+              <dt>E-mail</dt>
+              <dd><a href="mailto:pontogimgrafica@gmail.com">pontogimgrafica@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/pontogim" target="_blank" rel="noopener">@pontogim</a></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="contact-cta">
+          <p>Dúvida sobre prazo, tamanho ou preço? Mande uma mensagem que a gente responde.</p>
+          <div class="hero-actions">
+            <a class="btn btn--dark" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site da Ponto GIM e tenho uma dúvida.">Chamar no WhatsApp</a>
+            <a class="btn btn--outline-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Alameda+Peru+135+S%C3%A3o+Gon%C3%A7alo+RJ" target="_blank" rel="noopener">Ver no mapa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <!-- PENDENTE: a loja vai confirmar a razão social exata (cartão CNPJ). Depois, ela entra aqui junto do CNPJ. -->
+      <p>&copy; <span id="year">2026</span> Ponto GIM Gráfica e Personalizados &middot; CNPJ 50.026.803/0001-93</p>
+      <p><a href="https://www.instagram.com/pontogim" target="_blank" rel="noopener">Instagram</a> &middot; <a href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site da Ponto GIM.">WhatsApp</a> &middot; <a href="paginas/privacidade.html">Privacidade</a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site da Ponto GIM e queria fazer um pedido.">WhatsApp</a>
+
+  <script src="js/comum.js"></script>
+  <script src="js/script.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

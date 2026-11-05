@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar | Ponto GIM</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#120d1f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a1f'/%3E%3Cstop offset='.5' stop-color='%23ff3d8b'/%3E%3Cstop offset='1' stop-color='%232e6bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='url(%23g)'/%3E%3Ccircle cx='32' cy='32' r='22' fill='%23120d1f'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;600;800&family=Yellowtail&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/entrar.css">
+</head>
+<body data-pagina="entrar">
+
+  <main class="entrar">
+
+    <section class="entrar-marca">
+      <a class="logo" href="../index.html" aria-label="Ponto GIM, ir para o início">
+        <!-- Para usar o logo oficial: troque este span por <img src="../img/logo.png" alt="Ponto GIM" height="44"> -->
+        <span class="logo-mark"><span class="logo-text">.gim</span></span>
+        <span class="logo-name">Ponto GIM</span>
+      </a>
+
+      <div class="entrar-texto">
+        <h1>Entre para continuar</h1>
+        <p>Use a sua conta Google ou o seu e-mail para acessar o site da Ponto GIM.</p>
+        <p class="slogan">Sua ideia, nossa arte, sua personalidade!</p>
+      </div>
+    </section>
+
+    <section class="entrar-painel" aria-labelledby="titulo-painel">
+      <div class="entrar-card">
+        <h2 id="titulo-painel" class="sr-only">Entrar ou criar conta</h2>
+
+        <p class="aviso aviso--config" id="aviso-config" hidden>
+          O login ainda não foi configurado. Preencha o arquivo <code>js/firebase-config.js</code> (passo a passo no LEIA-ME).
+        </p>
+
+        <p class="aviso aviso--instagram" id="aviso-instagram" hidden>
+          Você abriu o site dentro de outro aplicativo. O Google não permite entrar por aqui. Abra o site no navegador do celular (menu <strong>&hellip;</strong> e "Abrir no navegador") ou use e-mail e senha.
+        </p>
+
+        <div class="abas" role="tablist" aria-label="Escolha como continuar">
+          <button class="aba" type="button" role="tab" id="aba-entrar" data-modo="entrar" aria-selected="true" aria-controls="form-login">Entrar</button>
+          <button class="aba" type="button" role="tab" id="aba-criar" data-modo="criar" aria-selected="false" aria-controls="form-login" tabindex="-1">Criar conta</button>
+        </div>
+
+        <button class="btn-google" type="button" id="btn-google">
+          <svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true" focusable="false">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          </svg>
+          <span>Continuar com o Google</span>
+        </button>
+
+        <p class="ou"><span>ou use o e-mail</span></p>
+
+        <form id="form-login" role="tabpanel" aria-labelledby="aba-entrar" novalidate>
+          <div class="field" id="campo-nome" hidden>
+            <label for="login-nome">Seu nome</label>
+            <input id="login-nome" name="nome" type="text" autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="login-email">E-mail</label>
+            <input id="login-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          </div>
+
+          <div class="field">
+            <label for="login-senha">Senha</label>
+            <input id="login-senha" name="senha" type="password" autocomplete="current-password" minlength="6" required>
+          </div>
+
+          <button class="btn btn--primary btn--full" type="submit" id="btn-enviar">Entrar</button>
+
+          <p class="esqueci" id="linha-esqueci">
+            <button class="link-botao" type="button" id="btn-esqueci">Esqueci minha senha</button>
+          </p>
+        </form>
+
+        <p class="mensagem" id="mensagem" role="alert" aria-live="polite" hidden></p>
+
+        <p class="entrar-lgpd">Ao continuar, você concorda com a <a href="privacidade.html">Política de Privacidade</a>.</p>
+      </div>
+
+      <p class="entrar-voltar"><a href="https://wa.me/5521997437808" data-wa="Oi! Estou com dificuldade para entrar no site da Ponto GIM.">Precisa de ajuda? Chame no WhatsApp</a></p>
+    </section>
+
+  </main>
+
+  <script src="../js/comum.js"></script>
+  <script type="module" src="../js/auth.js"></script>
+  <script type="module" src="../js/entrar.js"></script>
+</body>
+</html>
