@@ -13,10 +13,10 @@
    ========================================================== */
 
 export const firebaseConfig = {
-  apiKey: '',
-  authDomain: '',
-  projectId: '',
-  appId: '',
+  apiKey: 'AIzaSyC5NMp3eTd04KFMG380EFdf00wnRPi_CEk',
+  authDomain: 'ponto-gim.firebaseapp.com',
+  projectId: 'ponto-gim',
+  appId: '1:16433478462:web:334fc00093a3b3d4214a6f',
 };
 
 /* true  = o visitante precisa entrar antes de ver o site.
