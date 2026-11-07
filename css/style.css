@@ -683,7 +683,7 @@ html.auth-pendente body { visibility: hidden; }
   .hero-title-row h1 { grid-column: 2; max-width: none; font-size: clamp(2rem, 5vw, 4rem); }
 }
 @media (min-width: 961px) {
-  .hero-copy { transform: translateX(clamp(1.5rem, 3vw, 3rem)); }
+  .hero-copy { position: relative; left: clamp(1.5rem, 3vw, 3rem); }
 }
 .builder-hint { margin: -.35rem 0 1rem; font-size: .88rem; color: rgba(243, 239, 250, .68); }
 .builder-hint strong { color: var(--orange); }
