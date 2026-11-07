@@ -19,14 +19,8 @@ const rotulo = document.getElementById('mug-label');
 const corpo = document.getElementById('mug-body');
 const alca = document.getElementById('mug-handle');
 const borda = document.getElementById('mug-rim');
+const interior = document.getElementById('mug-interior');
 
-// Escolhe texto claro ou escuro conforme a cor da caneca
-function corDoTexto(hex) {
-  const n = parseInt(hex.slice(1), 16);
-  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
-  const luminancia = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminancia > 0.6 ? '#1b1625' : '#ffffff';
-}
 
 // Quebra o texto em até 3 linhas de ~12 caracteres
 function quebrarLinhas(texto, maxPorLinha = 12, maxLinhas = 3) {
@@ -60,10 +54,11 @@ function desenharCaneca() {
   if (fonte.caixaAlta) texto = texto.toUpperCase();
   const linhas = quebrarLinhas(texto);
 
-  // Cores da caneca
-  corpo.style.fill = cor;
+  // O corpo da caneca tradicional permanece branco; a cor fica no interior e na alça.
+  corpo.style.fill = '#f4f1f8';
   alca.style.stroke = cor;
   borda.style.fill = cor;
+  interior.style.fill = cor;
 
   // Tamanho da letra: cabe na largura (190) e na altura (180)
   const maior = Math.max(1, ...linhas.map((l) => l.length));
@@ -73,7 +68,7 @@ function desenharCaneca() {
 
   // Monta as linhas dentro do <text>
   rotulo.textContent = '';
-  rotulo.setAttribute('fill', corDoTexto(cor));
+  rotulo.setAttribute('fill', '#1b1625');
   rotulo.style.fontFamily = fonte.familia;
   rotulo.style.fontStyle = fonte.estilo;
   rotulo.style.fontWeight = fonte.peso;
@@ -115,7 +110,7 @@ formCaneca.addEventListener('submit', (e) => {
   const mensagem =
     'Oi! Vim pelo site da Ponto GIM e quero uma caneca personalizada.\n' +
     'Texto: "' + texto + '"\n' +
-    'Cor: ' + cor + '\n' +
+    'Cor da alça e do interior: ' + cor + '\n' +
     'Letra: ' + fonte + '\n' +
     'Pode me passar valor e prazo?';
   window.open(linkWhatsApp(mensagem), '_blank', 'noopener');

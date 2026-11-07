@@ -20,16 +20,22 @@ pontogim-site/
 ├── js/
 │   ├── comum.js          WhatsApp, menu, ano do rodapé (carregue primeiro em toda página)
 │   ├── script.js         só da home: montador de caneca e orçamento
+│   ├── mug-3d.js         prévia 3D interativa da caneca tradicional
 │   ├── produtos.js       DADOS do catálogo (é aqui que se edita produto, prazo e preço)
 │   ├── catalogo.js       monta filtros e cartões do catálogo
 │   ├── firebase-config.js  configuração do login e a chave EXIGIR_LOGIN
 │   ├── auth.js           login e trava do site (módulo)
-│   └── entrar.js         comportamento da página de login
+│   ├── entrar.js         comportamento da página de login
+│   └── vendor/
+│       ├── three.module.js módulo Three.js usado pela prévia 3D
+│       └── three.core.js   núcleo da biblioteca Three.js
 ├── img/                  logo, mascote e fotos
 │   └── produtos/         fotos do catálogo
 └── LEIA-ME.md
 ```
 Páginas dentro de `paginas/` usam `../` para chegar em `css/`, `js/` e `img/`.
+
+Na página inicial, a caneca pode ser girada com o mouse ou o dedo. Para usar a página localmente, abra pelo Live Server ou outro servidor HTTP; a prévia ilustrada em SVG continua como alternativa se o navegador não oferecer WebGL.
 
 ## O que já veio das respostas da loja
 - Marca somente **Ponto GIM Gráfica e Personalizados** (Ponto GIM Tech fora do site; sem quadros personalizados).
@@ -43,8 +49,8 @@ Páginas dentro de `paginas/` usam `../` para chegar em `css/`, `js/` e `img/`.
 | Razão social exata (cartão CNPJ) | rodapé do `index.html` (comentário PENDENTE) |
 | CEP, bairro e ponto de referência | seção Contato do `index.html` (comentário PENDENTE) |
 | Link do perfil da loja no Google Maps | botão "Ver no mapa" (hoje busca pelo endereço) |
-| Logo original (PDF, SVG, AI ou PNG transparente) | `img/logo.png`, trocar o `<span class="logo-mark">` pelo `<img>` indicado no comentário do cabeçalho (no catálogo e no 404 também) |
-| Panda original (PNG transparente ou vetor) | `img/mascote.png` (aparece em "Como pedir" e no 404 sozinho) |
+| Logo original | Recebida em 06/11/2026 e integrada em `img/logo.jpg` no cabeçalho |
+| Mascote panda | Recebido em 06/11/2026 e integrado junto ao título da página inicial e no 404 |
 | Cores e fontes oficiais | variáveis em `:root` do `css/style.css` |
 | Fotos originais de cada produto | `img/produtos/` com os nomes de `js/produtos.js`; fotos grandes dos cartões da home em `img/` (caneca.jpg, vestuario.jpg, adesivos.jpg, festas.jpg, banners.jpg, outros.jpg, empresas.jpg) |
 | Fotos da fachada, interior e produção | seção "Nossa história" |

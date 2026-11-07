@@ -22,7 +22,7 @@
   <header class="site-header">
     <div class="wrap header-row">
       <a class="logo" href="../index.html" aria-label="Ponto GIM, voltar para o início">
-        <span class="logo-mark"><span class="logo-text">.gim</span></span>
+        <span class="logo-mark"><img class="logo-mark-image" src="../img/logo.jpg" alt=""></span>
         <span class="logo-name">Ponto GIM</span>
       </a>
 
@@ -61,7 +61,45 @@
           Ainda não temos itens nessa categoria. Conte a ideia pelo WhatsApp que a gente resolve.
         </p>
 
+        <section id="galeria-canecas" class="inspiracoes-canecas" aria-labelledby="galeria-canecas-titulo" hidden>
+          <div class="inspiracoes-head">
+            <h2 id="galeria-canecas-titulo">Modelos de canecas</h2>
+            <p>Escolha um modelo para consultar com a loja pelo WhatsApp.</p>
+          </div>
+          <div class="inspiracoes-grid">
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Caneca imperial"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/caneca-nomes-metalizadas.jpg" alt="Caneca imperial personalizada mostrando a estampa" loading="lazy"><span class="inspiracao-legenda">Caneca imperial<strong>R$ 60,00</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Caneca mágica"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/caneca-magica.jpg" alt="Caneca preta mágica personalizada com foto que aparece ao esquentar" loading="lazy"><span class="inspiracao-legenda">Caneca mágica<strong>R$ 50,00</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Xícara empilhável"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/canecas-casal.jpg" alt="Xícaras empilháveis personalizadas com nomes" loading="lazy"><span class="inspiracao-legenda">Xícara empilhável<strong>R$ 30,00</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Xícara empilhável com estampa natalina"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/caneca-natal.jpg" alt="Xícara empilhável com estampa natalina" loading="lazy"><span class="inspiracao-legenda">Xícara empilhável com estampa natalina<strong>R$ 30,00</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Caneca rosa metálica personalizada (frente e verso)"><span class="inspiracao-selo" aria-hidden="true">✓</span><span class="inspiracao-vistas"><img src="../img/produtos/caneca-glitter-personalizada.jpg" alt="Caneca rosa metálica personalizada, vista de frente" loading="lazy"><img src="../img/produtos/caneca-glitter-rosa.jpg" alt="Verso da mesma caneca rosa metálica, sem estampa" loading="lazy"></span><span class="inspiracao-legenda">Caneca rosa metálica personalizada<strong>R$ 40,00</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Caneca com borda e alça cromada personalizada"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/caneca-metalizada-bebes.jpg" alt="Caneca com foto personalizada, borda e alça cromadas" loading="lazy"><span class="inspiracao-legenda">Caneca cromada personalizada<strong>R$ 45,00</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Caneca com borda e alça cromada"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/canecas-borda-metalizada.jpg" alt="Canecas com borda e alça douradas ou cromadas" loading="lazy"><span class="inspiracao-legenda">Caneca com borda e alça cromada<strong>R$ 45,00</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Caneca com borda e alça cromada (tema natalino)"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/canecas-natalinas.jpg" alt="Caneca natalina com borda e alça metalizadas" loading="lazy"><span class="inspiracao-legenda">Caneca com borda e alça cromada (tema natalino)<strong>R$ 45,00</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Caneca colorida com alça de coração"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/canecas-alca-coracao.jpg" alt="Canecas coloridas com alças em formato de coração" loading="lazy"><span class="inspiracao-legenda">Caneca colorida com alça de coração<strong>R$ 42,00</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Frase com listras azuis"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/caneca-frase-azul.jpg" alt="Caneca azul listrada com frase personalizada" loading="lazy"><span class="inspiracao-legenda">Frase com listras azuis<strong>R$ 39,90</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Frase com listras vermelhas"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/caneca-frase-vermelha.jpg" alt="Caneca vermelha listrada com frase personalizada" loading="lazy"><span class="inspiracao-legenda">Frase com listras vermelhas<strong>R$ 39,90</strong></span></label>
+            <label class="inspiracao-card"><input type="radio" name="modelo-caneca" value="Flores e nomes"><span class="inspiracao-selo" aria-hidden="true">✓</span><img src="../img/produtos/caneca-frases-flores.jpg" alt="Caneca vermelha com flores e nomes personalizados" loading="lazy"><span class="inspiracao-legenda">Flores e nomes<strong>R$ 39,90</strong></span></label>
+          </div>
+          <fieldset id="coracao-cor-opcoes" class="inspiracao-cor" aria-describedby="coracao-cor-ajuda" hidden>
+            <legend>Escolha a cor da alça de coração</legend>
+            <div class="swatches">
+              <label class="swatch"><input type="radio" name="cor-caneca-coracao" value="Vermelha"><span style="--c:#ed1720"></span><em class="sr-only">Vermelha</em></label>
+              <label class="swatch"><input type="radio" name="cor-caneca-coracao" value="Verde"><span style="--c:#00a85a"></span><em class="sr-only">Verde</em></label>
+              <label class="swatch"><input type="radio" name="cor-caneca-coracao" value="Rosa"><span style="--c:#ed83b2"></span><em class="sr-only">Rosa</em></label>
+              <label class="swatch"><input type="radio" name="cor-caneca-coracao" value="Amarela"><span style="--c:#ffca28"></span><em class="sr-only">Amarela</em></label>
+              <label class="swatch"><input type="radio" name="cor-caneca-coracao" value="Laranja"><span style="--c:#ef5b22"></span><em class="sr-only">Laranja</em></label>
+              <label class="swatch"><input type="radio" name="cor-caneca-coracao" value="Preta"><span style="--c:#19191c"></span><em class="sr-only">Preta</em></label>
+            </div>
+            <p id="coracao-cor-ajuda">A cor escolhida será incluída na mensagem para a loja.</p>
+          </fieldset>
+          <div class="inspiracoes-acoes">
+            <p id="caneca-selecao-status" role="status" aria-live="polite">Selecione um modelo acima para consultar com a loja.</p>
+            <a id="consultar-caneca" class="btn btn--primary" href="#" aria-disabled="true" tabindex="-1">Consultar modelo selecionado</a>
+          </div>
+        </section>
+
         <div class="catalogo-cta">
+
           <div>
             <h2>Não achou o que procura?</h2>
             <p>Conte a ideia. Se dá para imprimir, a gente personaliza.</p>

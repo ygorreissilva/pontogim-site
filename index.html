@@ -28,8 +28,8 @@
   <header class="site-header">
     <div class="wrap header-row">
       <a class="logo" href="#inicio" aria-label="Ponto GIM, ir para o início">
-        <!-- Para usar o logo oficial: troque este span por <img src="img/logo.png" alt="Ponto GIM" height="44"> -->
-        <span class="logo-mark"><span class="logo-text">.gim</span></span>
+        <!-- Marca original enviada pela loja. -->
+        <span class="logo-mark"><img class="logo-mark-image" src="img/logo.jpg" alt=""></span>
         <span class="logo-name">Ponto GIM</span>
       </a>
 
@@ -54,7 +54,10 @@
     <section id="inicio" class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <h1>Caneca, camisa e presente com a sua cara.</h1>
+          <div class="hero-title-row">
+            <img class="hero-mascote" src="img/mascote.jpg" alt="" fetchpriority="high">
+            <h1>Caneca, camisa e presente com a sua cara.</h1>
+          </div>
           <p class="hero-lead">Sua ideia, nossa arte, sua personalidade! Escreva ao lado o que você quer na caneca, escolha a cor e veja como fica antes de pedir.</p>
           <div class="hero-actions">
             <a class="btn btn--primary" href="https://wa.me/5521997437808" data-wa="Oi! Vim pelo site da Ponto GIM e queria fazer um pedido.">Pedir pelo WhatsApp</a>
@@ -67,6 +70,7 @@
           <h2 id="builder-title">Monte sua caneca</h2>
 
           <div class="stage">
+            <div id="mug-3d" class="mug-3d-viewport" role="group" aria-label="Caneca 3D interativa" tabindex="0"></div>
             <svg id="mug" viewBox="0 0 400 340" role="img" aria-label="Pré-visualização da caneca personalizada">
               <defs>
                 <linearGradient id="shade" x1="0" x2="1" y1="0" y2="0">
@@ -81,9 +85,14 @@
               <path id="mug-body" d="M60 58 H280 V270 Q280 300 250 300 H90 Q60 300 60 270 Z"/>
               <path d="M60 58 H280 V270 Q280 300 250 300 H90 Q60 300 60 270 Z" fill="url(#shade)"/>
               <ellipse id="mug-rim" cx="170" cy="58" rx="110" ry="15"/>
-              <ellipse cx="170" cy="60" rx="100" ry="10" fill="#000" opacity=".38"/>
+              <ellipse id="mug-interior" cx="170" cy="60" rx="100" ry="10"/>
               <text id="mug-label" x="170" y="180" text-anchor="middle"></text>
             </svg>
+          </div>
+
+          <div class="mug-3d-controls" id="mug-3d-controls" hidden>
+            <p>Arraste a caneca para girar. No celular, use o dedo.</p>
+            <button class="btn btn--ghost btn--small" id="mug-3d-reset" type="button">Centralizar caneca</button>
           </div>
 
           <div class="field">
@@ -92,15 +101,23 @@
           </div>
 
           <fieldset class="field">
-            <legend>Cor da caneca</legend>
+            <legend>Cor da alça e do interior</legend>
             <div class="swatches">
-              <label class="swatch"><input type="radio" name="cor" value="#f4f1f8" data-nome="Branca" checked><span style="--c:#f4f1f8"></span><em class="sr-only">Branca</em></label>
-              <label class="swatch"><input type="radio" name="cor" value="#1b1625" data-nome="Preta"><span style="--c:#1b1625"></span><em class="sr-only">Preta</em></label>
-              <label class="swatch"><input type="radio" name="cor" value="#ffc23d" data-nome="Amarela"><span style="--c:#ffc23d"></span><em class="sr-only">Amarela</em></label>
-              <label class="swatch"><input type="radio" name="cor" value="#ff6fa8" data-nome="Rosa"><span style="--c:#ff6fa8"></span><em class="sr-only">Rosa</em></label>
-              <label class="swatch"><input type="radio" name="cor" value="#2e6bff" data-nome="Azul"><span style="--c:#2e6bff"></span><em class="sr-only">Azul</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#08acd0" data-nome="Ciano" checked><span style="--c:#08acd0"></span><em class="sr-only">Ciano</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#1765d5" data-nome="Azul"><span style="--c:#1765d5"></span><em class="sr-only">Azul</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#101e50" data-nome="Azul-marinho"><span style="--c:#101e50"></span><em class="sr-only">Azul-marinho</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#ed83b2" data-nome="Rosa"><span style="--c:#ed83b2"></span><em class="sr-only">Rosa</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#ed1720" data-nome="Vermelha"><span style="--c:#ed1720"></span><em class="sr-only">Vermelha</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#ef5b22" data-nome="Laranja"><span style="--c:#ef5b22"></span><em class="sr-only">Laranja</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#741d3e" data-nome="Vinho"><span style="--c:#741d3e"></span><em class="sr-only">Vinho</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#19191c" data-nome="Preta"><span style="--c:#19191c"></span><em class="sr-only">Preta</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#ffca28" data-nome="Amarela"><span style="--c:#ffca28"></span><em class="sr-only">Amarela</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#00663f" data-nome="Verde"><span style="--c:#00663f"></span><em class="sr-only">Verde</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#8bdc25" data-nome="Verde-limão"><span style="--c:#8bdc25"></span><em class="sr-only">Verde-limão</em></label>
+              <label class="swatch"><input type="radio" name="cor" value="#168fcb" data-nome="Azul-claro"><span style="--c:#168fcb"></span><em class="sr-only">Azul-claro</em></label>
             </div>
           </fieldset>
+          <p class="builder-hint"><strong>Caneca tradicional: R$ 39,00.</strong><br>O corpo fica branco; escolha a cor da alça e do interior.</p>
 
           <fieldset class="field">
             <legend>Estilo da letra</legend>
@@ -200,8 +217,7 @@
     <!-- COMO PEDIR -->
     <section id="como-pedir" class="section">
       <div class="wrap wrap--mascote">
-        <!-- Mascote: salve o arquivo em img/mascote.png (PNG com fundo transparente). Se não existir, some sozinho. -->
-        <img class="mascote" src="img/mascote.png" alt="" loading="lazy" data-opcional>
+
         <div class="section-head">
           <h2>Como pedir</h2>
           <p>Sem cadastro e sem complicação. Tudo se resolve pelo WhatsApp.</p>
@@ -421,6 +437,7 @@
 
   <script src="js/comum.js"></script>
   <script src="js/script.js"></script>
+  <script type="module" src="js/mug-3d.js"></script>
   <script type="module" src="js/auth.js"></script>
 </body>
 </html>

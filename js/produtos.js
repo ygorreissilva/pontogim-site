@@ -34,8 +34,7 @@ const PRODUTOS = [
     descricao: 'Com foto, frase, nome ou logo. Para presentear, para vender, para o dia a dia.',
     imagem: 'canecas.jpg',
     prazo: '2 dias úteis',
-    preco: '',
-    precoDemo: 'A partir de R$ 35,00',
+    preco: 'A partir de R$ 35,00',
   },
   {
     nome: 'Copos personalizados',
@@ -154,8 +153,7 @@ const PRODUTOS = [
     descricao: 'Para a mesa de trabalho ou para presentear, com a arte que você quiser.',
     imagem: 'mouse-pads.jpg',
     prazo: '5 dias úteis',
-    preco: '',
-    precoDemo: 'A partir de R$ 35,00',
+    preco: 'A partir de R$ 35,00',
   },
   {
     nome: 'Capas de celular',

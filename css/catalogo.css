@@ -143,3 +143,33 @@
   .filtros { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: .4rem; scrollbar-width: thin; }
   .chip { flex: none; }
 }
+
+/* Galeria de modelos enviados pela loja */
+.inspiracoes-canecas { grid-column: 1 / -1; margin-top: 1rem; }
+.inspiracoes-canecas[hidden] { display: none; }
+.inspiracoes-head { margin-bottom: 1.2rem; }
+.inspiracoes-head h2 { font: 400 clamp(1.8rem, 4vw, 2.6rem)/1.05 var(--font-display); text-transform: uppercase; }
+.inspiracoes-head p { margin-top: .5rem; color: rgba(18, 13, 31, .72); }
+.inspiracoes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1rem; }
+.inspiracao-card { position: relative; display: block; overflow: hidden; border: 2px solid transparent; border-radius: 18px; background: #fff; box-shadow: 0 8px 24px rgba(18,13,31,.08); cursor: pointer; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+.inspiracao-card:hover { transform: translateY(-2px); }
+.inspiracao-card:focus-within { outline: 3px solid var(--orange); outline-offset: 3px; }
+.inspiracao-card.is-selected { border-color: var(--violet); box-shadow: 0 10px 28px rgba(123,63,242,.25); }
+.inspiracao-card input { position: absolute; z-index: 2; top: .8rem; right: .8rem; width: 1.35rem; height: 1.35rem; accent-color: var(--violet); cursor: pointer; }
+.inspiracao-selo { display: none; position: absolute; z-index: 1; top: .55rem; left: .65rem; padding: .25rem .55rem; border-radius: 999px; background: var(--violet); color: #fff; font-size: .78rem; font-weight: 800; }
+.inspiracao-card.is-selected .inspiracao-selo { display: block; }
+.inspiracoes-grid img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.inspiracao-vistas { position: relative; display: block; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #f3eff7; }
+.inspiracao-vistas > img:first-child { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+.inspiracao-vistas > img:last-child { position: absolute; right: .7rem; bottom: .7rem; width: 36%; height: auto; aspect-ratio: 1 / 1; border: 3px solid #fff; border-radius: 14px; box-shadow: 0 4px 16px rgba(18,13,31,.25); object-fit: cover; }
+.inspiracao-legenda { display: block; padding: .8rem 1rem 1rem; font-weight: 700; }
+.inspiracao-legenda strong { display: block; margin-top: .3rem; color: var(--violet); font-weight: 800; }
+.inspiracao-cor { min-width: 0; margin-top: 1rem; padding: 1rem; border: 1px solid rgba(18,13,31,.12); border-radius: 18px; background: #fff; }
+.inspiracao-cor[hidden] { display: none; }
+.inspiracao-cor legend { padding: 0; color: var(--ink); font-weight: 800; }
+.inspiracao-cor .swatches { gap: .9rem; margin-top: .65rem; }
+.inspiracao-cor .swatch span { border-color: rgba(18,13,31,.18); }
+.inspiracao-cor #coracao-cor-ajuda { margin-top: .8rem; color: rgba(18,13,31,.68); font-size: .9rem; }
+.inspiracoes-acoes { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.2rem; padding: 1.2rem; border-radius: 18px; background: #fff; }
+.inspiracoes-acoes p { color: rgba(18,13,31,.72); font-weight: 600; }
+.inspiracoes-acoes a[aria-disabled="true"] { opacity: .55; cursor: not-allowed; }

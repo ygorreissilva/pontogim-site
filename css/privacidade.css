@@ -42,3 +42,10 @@
 .doc-corpo li { line-height: 1.55; padding-left: .2rem; }
 .doc-corpo li::marker { color: var(--pink); }
 .doc-corpo a { color: var(--ink); text-underline-offset: 3px; }
+
+/* Mascote no espaço livre à direita do título */
+.doc-head .wrap { position: relative; }
+.doc-head-mascote { position: absolute; top: 50%; right: 0; height: clamp(220px, 24vw, 320px); width: auto; max-width: 40%; object-fit: contain; transform: translateY(-50%); mix-blend-mode: screen; }
+@media (max-width: 960px) {
+  .doc-head-mascote { display: none; }
+}

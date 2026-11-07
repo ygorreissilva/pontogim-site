@@ -8,9 +8,91 @@ const listaEl = document.getElementById('lista');
 const filtrosEl = document.getElementById('filtros');
 const contagemEl = document.getElementById('contagem');
 const vazioEl = document.getElementById('vazio');
+const galeriaCanecasEl = document.getElementById('galeria-canecas');
 
 let categoriaAtiva = 'todos';
 
+const linkConsultarCaneca = document.getElementById('consultar-caneca');
+const statusSelecaoCaneca = document.getElementById('caneca-selecao-status');
+const opcoesCoracaoEl = document.getElementById('coracao-cor-opcoes');
+const MODELO_ALCA_CORACAO = 'Caneca colorida com alça de coração';
+
+function desativarConsultaCaneca(mensagem) {
+  statusSelecaoCaneca.textContent = mensagem;
+  linkConsultarCaneca.href = '#';
+  linkConsultarCaneca.setAttribute('aria-disabled', 'true');
+  linkConsultarCaneca.setAttribute('tabindex', '-1');
+  linkConsultarCaneca.removeAttribute('target');
+  linkConsultarCaneca.removeAttribute('rel');
+}
+
+function atualizarConsultaCaneca(opcao) {
+  if (!opcao) {
+    opcoesCoracaoEl.hidden = true;
+    desativarConsultaCaneca('Selecione um modelo acima para consultar com a loja.');
+    return;
+  }
+
+  const precisaCor = opcao.value === MODELO_ALCA_CORACAO;
+  opcoesCoracaoEl.hidden = !precisaCor;
+  if (!precisaCor) {
+    document.querySelectorAll('input[name="cor-caneca-coracao"]').forEach((cor) => {
+      cor.checked = false;
+    });
+  }
+
+  const corSelecionada = document.querySelector('input[name="cor-caneca-coracao"]:checked');
+  if (precisaCor && !corSelecionada) {
+    desativarConsultaCaneca('Modelo selecionado: ' + opcao.value + '. Escolha uma cor para continuar.');
+    return;
+  }
+
+  const detalheCor = precisaCor ? '\nCor escolhida para a alça de coração: ' + corSelecionada.value + '.' : '';
+  statusSelecaoCaneca.textContent = 'Modelo selecionado: ' + opcao.value + (precisaCor ? ', na cor ' + corSelecionada.value : '') + '.';
+  linkConsultarCaneca.href = linkWhatsApp(
+    'Oi! Vim pelo catálogo da Ponto GIM e quero consultar este modelo de caneca: ' + opcao.value + '.' + detalheCor
+  );
+  linkConsultarCaneca.target = '_blank';
+  linkConsultarCaneca.rel = 'noopener';
+  linkConsultarCaneca.setAttribute('aria-disabled', 'false');
+  linkConsultarCaneca.removeAttribute('tabindex');
+}
+
+function limparSelecaoCaneca() {
+  document.querySelectorAll('input[name="modelo-caneca"]').forEach((opcao) => {
+    opcao.checked = false;
+  });
+  document.querySelectorAll('input[name="cor-caneca-coracao"]').forEach((cor) => {
+    cor.checked = false;
+  });
+  document.querySelectorAll('.inspiracao-card').forEach((cartao) => {
+    cartao.classList.remove('is-selected');
+  });
+  atualizarConsultaCaneca(null);
+}
+
+document.querySelectorAll('input[name="modelo-caneca"]').forEach((opcao) => {
+  opcao.addEventListener('change', () => {
+    document.querySelectorAll('.inspiracao-card').forEach((cartao) => {
+      cartao.classList.toggle('is-selected', cartao.querySelector('input').checked);
+    });
+
+    document.querySelectorAll('input[name="cor-caneca-coracao"]').forEach((cor) => {
+      cor.checked = false;
+    });
+    atualizarConsultaCaneca(opcao);
+  });
+});
+
+document.querySelectorAll('input[name="cor-caneca-coracao"]').forEach((cor) => {
+  cor.addEventListener('change', () => {
+    atualizarConsultaCaneca(document.querySelector('input[name="modelo-caneca"]:checked'));
+  });
+});
+
+linkConsultarCaneca.addEventListener('click', (evento) => {
+  if (linkConsultarCaneca.getAttribute('aria-disabled') === 'true') evento.preventDefault();
+});
 function categoriaPorId(id) {
   return CATEGORIAS.find((c) => c.id === id);
 }
@@ -112,17 +194,48 @@ function criarCartao(produto) {
     corpo.appendChild(prazo);
   }
 
-  corpo.append(preco, pedir);
+  if (produto.nome === 'Canecas personalizadas') {
+    cartao.dataset.produto = 'canecas-personalizadas';
+    const verModelos = document.createElement('button');
+    verModelos.type = 'button';
+    verModelos.className = 'btn btn--outline-dark btn--small ver-modelos';
+    verModelos.setAttribute('aria-controls', 'galeria-canecas');
+    verModelos.setAttribute('aria-expanded', 'false');
+    verModelos.textContent = 'Ver modelos de caneca';
+    corpo.append(preco, verModelos, pedir);
+  } else {
+    corpo.append(preco, pedir);
+  }
+
   cartao.append(midia, corpo);
   return cartao;
+}
+
+function colocarGaleriaCanecas(cartao) {
+  if (!cartao) return;
+
+  cartao.after(galeriaCanecasEl);
+  const botao = cartao.querySelector('.ver-modelos');
+  botao.addEventListener('click', () => {
+    const aberta = galeriaCanecasEl.hidden;
+    galeriaCanecasEl.hidden = !aberta;
+    if (!aberta) limparSelecaoCaneca();
+    botao.setAttribute('aria-expanded', String(aberta));
+    botao.textContent = aberta ? 'Ocultar modelos' : 'Ver modelos de caneca';
+
+    if (aberta) galeriaCanecasEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
 }
 
 /* ---------- Tela ---------- */
 function mostrar() {
   const itens = PRODUTOS.filter((p) => categoriaAtiva === 'todos' || p.categoria === categoriaAtiva);
 
+  limparSelecaoCaneca();
+  galeriaCanecasEl.hidden = true;
   listaEl.textContent = '';
   itens.forEach((p) => listaEl.appendChild(criarCartao(p)));
+  colocarGaleriaCanecas(listaEl.querySelector('[data-produto="canecas-personalizadas"]'));
 
   // Os cartões são criados agora, então liga WhatsApp e fotos neles
   ligarWhatsApp(listaEl);
