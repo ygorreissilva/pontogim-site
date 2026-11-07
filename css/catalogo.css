@@ -150,7 +150,8 @@
 .inspiracoes-head { margin-bottom: 1.2rem; }
 .inspiracoes-head h2 { font: 400 clamp(1.8rem, 4vw, 2.6rem)/1.05 var(--font-display); text-transform: uppercase; }
 .inspiracoes-head p { margin-top: .5rem; color: rgba(18, 13, 31, .72); }
-.inspiracoes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1rem; }
+.inspiracoes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1rem; align-items: start; }
+.inspiracao-coracao-grupo { display: grid; align-content: start; gap: .7rem; min-width: 0; }
 .inspiracao-card { position: relative; display: block; overflow: hidden; border: 2px solid transparent; border-radius: 18px; background: #fff; box-shadow: 0 8px 24px rgba(18,13,31,.08); cursor: pointer; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
 .inspiracao-card:hover { transform: translateY(-2px); }
 .inspiracao-card:focus-within { outline: 3px solid var(--orange); outline-offset: 3px; }
@@ -164,12 +165,12 @@
 .inspiracao-vistas > img:last-child { position: absolute; right: .7rem; bottom: .7rem; width: 36%; height: auto; aspect-ratio: 1 / 1; border: 3px solid #fff; border-radius: 14px; box-shadow: 0 4px 16px rgba(18,13,31,.25); object-fit: cover; }
 .inspiracao-legenda { display: block; padding: .8rem 1rem 1rem; font-weight: 700; }
 .inspiracao-legenda strong { display: block; margin-top: .3rem; color: var(--violet); font-weight: 800; }
-.inspiracao-cor { min-width: 0; margin-top: 1rem; padding: 1rem; border: 1px solid rgba(18,13,31,.12); border-radius: 18px; background: #fff; }
+.inspiracao-cor { min-width: 0; margin-top: 0; padding: .85rem; border: 1px solid rgba(18,13,31,.12); border-radius: 16px; background: #fff; }
 .inspiracao-cor[hidden] { display: none; }
 .inspiracao-cor legend { padding: 0; color: var(--ink); font-weight: 800; }
-.inspiracao-cor .swatches { gap: .9rem; margin-top: .65rem; }
+.inspiracao-cor .swatches { gap: .55rem; margin-top: .55rem; }
 .inspiracao-cor .swatch span { border-color: rgba(18,13,31,.18); }
-.inspiracao-cor #coracao-cor-ajuda { margin-top: .8rem; color: rgba(18,13,31,.68); font-size: .9rem; }
+.inspiracao-cor #coracao-cor-ajuda { margin-top: .6rem; color: rgba(18,13,31,.68); font-size: .9rem; }
 .inspiracoes-acoes { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.2rem; padding: 1.2rem; border-radius: 18px; background: #fff; }
 .inspiracoes-acoes p { color: rgba(18,13,31,.72); font-weight: 600; }
 .inspiracoes-acoes a[aria-disabled="true"] { opacity: .55; cursor: not-allowed; }
